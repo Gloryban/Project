@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#7c25c9" />
+  <meta name="description" content="Berry — учебный маркетплейс с удобным каталогом, поиском, избранным, корзиной и акциями." />
+  <title>Berry — находки на каждый день</title>
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#app">Перейти к содержимому</a>
+  <div class="topline"><div class="container topline-inner"><span>Яркие находки каждый день <span aria-hidden="true">✦</span></span><div class="top-links"><a href="#/delivery">Доставка и оплата</a><a href="#/faq">Помощь</a><span class="topline-location">Казахстан · ₸</span></div></div></div>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-main">
+      <a href="#/home" class="brand" aria-label="Berry — на главную"><span class="brand-mark"><span class="berry-shape">✦</span></span><span>berry<span class="brand-period">.</span></span></a>
+      <button type="button" class="catalog-toggle" id="catalogToggle" aria-controls="categoryMenu" aria-expanded="false"><span class="icon-slot" data-icon="menu"></span><span>Каталог</span></button>
+      <form id="searchForm" class="search-wrap" role="search" autocomplete="off"><span class="search-symbol icon-slot" data-icon="search"></span><input id="searchInput" name="search" type="search" placeholder="Найти что-нибудь классное" aria-label="Поиск товаров" /><button type="submit" class="search-submit" aria-label="Найти товары"><span class="icon-slot" data-icon="arrow-right"></span></button><div class="search-suggestions hidden" id="searchSuggestions" role="listbox"></div></form>
+      <nav class="header-actions" aria-label="Основная навигация">
+        <a href="#/profile" data-route="profile" class="header-action"><span class="icon-slot" data-icon="user-round"></span><span>Профиль</span></a>
+        <a href="#/favorites" data-route="favorites" class="header-action"><span class="icon-slot" data-icon="heart"></span><span>Избранное</span><span id="favoriteBadge" class="action-count hidden" aria-label="Количество избранных"></span></a>
+        <a href="#/cart" data-route="cart" class="header-action"><span class="icon-slot" data-icon="shopping-bag"></span><span>Корзина</span><span id="cartBadge" class="action-count hidden" aria-label="Количество товаров в корзине"></span></a>
+      </nav>
+    </div>
+    <div class="container categories-bar" id="categoriesBar"><a href="#/home" class="category-link">Главная</a><a href="#/offers" class="category-link sale-link">⚡ Скидки дня</a><a href="#/catalog?category=clothes" class="category-link">Одежда</a><a href="#/catalog?category=shoes" class="category-link">Обувь</a><a href="#/catalog?category=electronics" class="category-link">Электроника</a><a href="#/catalog?category=beauty" class="category-link">Красота</a><a href="#/catalog?category=home" class="category-link">Для дома</a><a href="#/catalog?category=accessories" class="category-link">Аксессуары</a></div>
+    <div class="category-dropdown hidden" id="categoryMenu"><div class="container menu-content" id="menuContent"></div></div>
+  </header>
+
+  <main id="app" class="container app-main" tabindex="-1"><div class="loading-skeleton" aria-hidden="true"><div></div><div></div><div></div></div></main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a href="#/home" class="footer-logo">berry<span>.</span></a><p>Хорошие вещи. Приятные цены.<br/>Красивые находки каждый день.</p><div class="footer-note">Учебный проект · не настоящий магазин</div></div><div class="footer-column"><h3>Покупателям</h3><a href="#/catalog">Все товары</a><a href="#/offers">Акции</a><a href="#/favorites">Избранное</a><a href="#/cart">Моя корзина</a></div><div class="footer-column"><h3>Информация</h3><a href="#/delivery">Доставка и оплата</a><a href="#/faq">Вопросы и ответы</a><a href="#/profile">Личный кабинет</a></div><div class="footer-column"><h3>На связи</h3><p>Есть идея, вопрос или предложение?</p><a class="footer-contact" href="#/faq">Написать нам <span aria-hidden="true">↗</span></a><p class="footer-meta">Ответ появится прямо в демо-интерфейсе.</p></div></div><div class="container footer-bottom"><span>© 2026 Berry Market. Учебная демонстрация.</span><span>Сделано с вниманием к деталям <span aria-hidden="true">♥</span></span></div></footer>
+
+  <nav class="mobile-bar" aria-label="Мобильная навигация"><a href="#/home" data-route="home"><span class="icon-slot" data-icon="house"></span><span>Главная</span></a><a href="#/catalog" data-route="catalog"><span class="icon-slot" data-icon="grid-2x2"></span><span>Каталог</span></a><a href="#/favorites" data-route="favorites"><span class="icon-slot" data-icon="heart"></span><span>Избранное</span></a><a href="#/cart" data-route="cart"><span class="icon-slot" data-icon="shopping-bag"></span><span>Корзина</span><span class="mobile-cart-count hidden" id="mobileCartBadge"></span></a><a href="#/profile" data-route="profile"><span class="icon-slot" data-icon="user-round"></span><span>Профиль</span></a></nav>
+
+  <div class="toast-stack" id="toastStack" role="status" aria-live="polite"></div>
+  <dialog class="quick-dialog" id="quickDialog" aria-label="Быстрый просмотр товара"></dialog>
+  <div class="overlay hidden" id="menuOverlay" aria-hidden="true"></div>
+</body>
+</html>
